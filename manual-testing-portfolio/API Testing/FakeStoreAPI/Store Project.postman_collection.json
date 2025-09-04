@@ -1,0 +1,2436 @@
+{
+	"info": {
+		"_postman_id": "c87fe276-19a6-4b0f-865a-2a21360d2def",
+		"name": "Store Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41735283"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Valid Test cases",
+					"item": [
+						{
+							"name": "Retrieve all Products",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 0,\r\n  \"userId\": 0,\r\n  \"products\": [\r\n    {\r\n      \"id\": 7,\r\n      \"title\": \"string\",\r\n      \"price\": 0.1,\r\n      \"description\": \"string\",\r\n      \"category\": \"string\",\r\n      \"image\": \"http://example.com\"\r\n    }\r\n  ]\r\n}"
+								},
+								"url": {
+									"raw": "{{Base_URL}}/products",
+									"host": [
+										"{{Base_URL}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve one product by valid id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/38",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"38"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve one product by  valid slug",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Base_URL}}/products/slug/chage-title",
+									"host": [
+										"{{Base_URL}}"
+									],
+									"path": [
+										"products",
+										"slug",
+										"chage-title"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve one product with invalid id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/2",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve one product with invalid slug",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Base_URL}}/products/slug/randomslug",
+									"host": [
+										"{{Base_URL}}"
+									],
+									"path": [
+										"products",
+										"slug",
+										"randomslug"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filtering products by title",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?title=Majestic Mountain Graphic T-Shirt",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "Majestic Mountain Graphic T-Shirt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filtering products by price",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?price=90",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "price",
+											"value": "90"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filtering products by min and max price",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?price_min=40&price_max=100",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "price_min",
+											"value": "40"
+										},
+										{
+											"key": "price_max",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filtering products by categoery id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/categories/1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filtering products by slug",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Base_URL}}/categories/slug/clothes",
+									"host": [
+										"{{Base_URL}}"
+									],
+									"path": [
+										"categories",
+										"slug",
+										"clothes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve All categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/categories",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filter product  by Title, Price Range, and Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?name=Clothes&price_min=40&price_max=100&categoryId=1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Clothes"
+										},
+										{
+											"key": "price_min",
+											"value": "40"
+										},
+										{
+											"key": "price_max",
+											"value": "100"
+										},
+										{
+											"key": "categoryId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filtering by  Price Range and Category with Pagination",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?limit=10&price_min=40&price_max=100&categoryId=1&offset=10",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "price_min",
+											"value": "40"
+										},
+										{
+											"key": "price_max",
+											"value": "100"
+										},
+										{
+											"key": "categoryId",
+											"value": "1"
+										},
+										{
+											"key": "offset",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filtering by  Price Range with Pagination",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?limit=10&price_min=40&price_max=100&offset=0",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "price_min",
+											"value": "40"
+										},
+										{
+											"key": "price_max",
+											"value": "100"
+										},
+										{
+											"key": "categoryId",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify Retrieve all products that belong  to a specific category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/categories/1/products",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"categories",
+										"1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "categoryId",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a product with valid data",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"title\": \"My Product\", \r\n\"price\": 10, \r\n\"description\": \"A description\", \r\n\"categoryId\": 1, \r\n\"images\": [\"https://placehold.co/600x400\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update product title and price with  valid data",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"title\": \"MynewProduct\", \r\n\"price\": 50\r\n\r\n}"
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/101",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"101"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a product with valid ID",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n\"price\": 50\r\n\r\n}"
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/78",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"78"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate category is created with valid  name and valid image URL",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n\"name\": \"New Category\", \r\n\"image\": \"https://placeimg.com/640/480/any\"\r\n}"
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/categories",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "102",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate category is created without name",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n\"image\": \"https://placeimg.com/640/480/any\"\r\n}"
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/categories/",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"categories",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "102",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update categoery with valid data",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\": \"Updated Category\", \r\n\"image\": \"https://placeimg.com/640/480/any\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/categories/1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate category is deleted with valid ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\": \"Updated Category\", \r\n\"image\": \"https://placeimg.com/640/480/any\"}"
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/categories/47",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"categories",
+										"47"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Invalid Test cases",
+					"item": [
+						{
+							"name": "Update product with invalid image URL",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n\"images\": [\"invalid-url\"]\r\n\r\n}"
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/101",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"101"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "102",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update product with non existing id",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"title\": \"MynewProduct\", \r\n\"price\": 50, \r\n\r\n}"
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/9999",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"9999"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retreiving product by flaoting id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?id=1.9",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "categoryId",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "id",
+											"value": "1.9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retreiving product by String ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?id=abc",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "categoryId",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "id",
+											"value": "abc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retreiving product byString categoery id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?categoryId=abc",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "categoryId",
+											"value": "abc"
+										},
+										{
+											"key": "",
+											"value": "-1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retreiving product by negative id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?ld=-1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "categoryId",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "ld",
+											"value": "-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retreiving product invalid categoery id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products?categoryId=100",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "categoryId",
+											"value": "100"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a product without title",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n\"price\": 10, \r\n\"description\": \"A description\", \r\n\"categoryId\": 1, \r\n\"images\": [\"https://placehold.co/600x400\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a product without price",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n \"title\": \"product\",\r\n\"description\": \"A description\", \r\n\"categoryId\": 1, \r\n\"images\": [\"https://placehold.co/600x400\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a product with invalid price",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"title\": \"product2\",\r\n\"price\": abc , \r\n\"description\": \"A description\", \r\n\"categoryId\": 1, \r\n\"images\": [\"https://placehold.co/600x400\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a product with non existing categoery id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"title\": \"product2\",\r\n\"price\": \"10\", \r\n\"description\": \"A description\", \r\n\"categoryId\": 9999, \r\n\"images\": [\"https://placehold.co/600x400\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a product with invalid image URL",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"title\": \"product2\",\r\n\"price\": \"10\", \r\n\"description\": \"A description\", \r\n\"categoryId\": 1, \r\n\"images\": [\"not-a-url\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a product with multiple  valid images",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"title\": \"MultipleImageProduct\",\r\n\"price\": \"10\", \r\n\"description\": \"A description\", \r\n\"categoryId\": 1, \r\n\"images\": [\"https://placehold.co/600x400\", \r\n           \"https://placehold.co/300x300\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a product with Invalid ID",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n\"price\": 50\r\n\r\n}"
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/9999",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"9999"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "102",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retreiving product by numeric slug",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/products/slug/1234",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"slug",
+										"1234"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update categoery with  non-existing  category ID",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\": \"Updated Category\", \r\n\"image\": \"https://placeimg.com/640/480/any\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/categories/9999",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"categories",
+										"9999"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update category with invalid image url",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"image\": \"invalid url\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/categories/2",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"categories",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate category is deleted with invalid ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\": \"Updated Category\", \r\n\"image\": \"https://placeimg.com/640/480/any\"}"
+								},
+								"url": {
+									"raw": "https://api.escuelajs.co/api/v1/categories/9999",
+									"protocol": "https",
+									"host": [
+										"api",
+										"escuelajs",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"categories",
+										"9999"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Retrieve All users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve a specific user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nicolas\",\r\n  \"email\": \"nico@gmail.com\",\r\n  \"password\": \"1234\",\r\n  \"avatar\": \"https://picsum.photos/800\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"email\": \"nico@gmail.com\",\r\n  \r\n  \"name\": \"Change name\"\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users/7",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Email Availabilty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users/is-available",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"is-available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Email Availabilty with unregistered Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"Sam@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users/is-available",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"is-available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve user with non exiting id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users/9999",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve user with invalid data type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users/abc",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"abc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user with missing data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sami\",\r\n  \"password\": \"1234\",\r\n  \"avatar\": \"https://picsum.photos/800\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user with invalid email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sami\",\r\n  \"email\": \"sami@gmal\",\r\n  \"password\": \"1234\",\r\n  \"avatar\": \"https://picsum.photos/800\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user with invalid email foramt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sami\",\r\n  \"email\": \"sami@gmal.com\",\r\n  \"password\": \"1234\",\r\n  \"avatar\": \"https://picsum.photos/800\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user with invalid email foramt Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": ****\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users/61",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"61"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Email Availabilty with Invalid Email  Format",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"Sam@gmal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/users/is-available",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"is-available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with registered email",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"john@mail.com\",\r\n   \"password\": \"changeme\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with invalid password",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"john@mail.com\",\r\n   \"password\": \"123\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with  unregistered email",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"Mark@gmail.com\",\r\n   \"password\": \"123\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with  empty email or password",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"mark@gmail.com\",\r\n   \"password\": \"\"\r\n\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get profile with valid acess token",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNTMyMiwiZXhwIjoxNzU3OTMzMzIyfQ.kljR3K6ujg4ZYokc7uxurI44O2Mq2UqDi9JcGXwbeOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/auth/profile",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get profile with missing acess token",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/auth/profile",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get profile with invalid  acess token",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6Ik00pXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNTMyMiwiZXhwIjoxNzU3OTMzMzIyfQ.kljR3K6ujg4ZYokc7uxurI44O2Mq2UqDi9JcnXw0OQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/auth/profile",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile with valid refresh token",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNjY5MywiZXhwIjoxNzU2MjQyNjkzfQ.QWcDe7ijB5T-cIdp5MEmvdb1wo3hj6ge6f6atgx3QoU \"\r\n  \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/auth/refresh-token",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile with missing rerfesh Token",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/auth/refresh-token",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Locations",
+			"item": [
+				{
+					"name": "Validate Retrieve 10 random locations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNjY5MywiZXhwIjoxNzU2MjQyNjkzfQ.QWcDe7ijB5T-cIdp5MEmvdb1wo3hj6ge6f6atgx3QoU \"\r\n  \r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/locations",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Retrieve locations sorted by distance from the origin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNjY5MywiZXhwIjoxNzU2MjQyNjkzfQ.QWcDe7ijB5T-cIdp5MEmvdb1wo3hj6ge6f6atgx3QoU \"\r\n  \r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/locations?origin=6.2071641,-75.5720321",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "6.2071641,-75.5720321"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid origin coordinates",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNjY5MywiZXhwIjoxNzU2MjQyNjkzfQ.QWcDe7ijB5T-cIdp5MEmvdb1wo3hj6ge6f6atgx3QoU \"\r\n  \r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/locations?origin=abc,zxy",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "abc,zxy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve a specific number of Locations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNjY5MywiZXhwIjoxNzU2MjQyNjkzfQ.QWcDe7ijB5T-cIdp5MEmvdb1wo3hj6ge6f6atgx3QoU \"\r\n  \r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/locations?size=4",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid size value",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNjY5MywiZXhwIjoxNzU2MjQyNjkzfQ.QWcDe7ijB5T-cIdp5MEmvdb1wo3hj6ge6f6atgx3QoU \"\r\n  \r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/locations?size=-5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "-5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid size value (String)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNjY5MywiZXhwIjoxNzU2MjQyNjkzfQ.QWcDe7ijB5T-cIdp5MEmvdb1wo3hj6ge6f6atgx3QoU \"\r\n  \r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/locations?size=abc",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "abc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve location within a radius",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNjY5MywiZXhwIjoxNzU2MjQyNjkzfQ.QWcDe7ijB5T-cIdp5MEmvdb1wo3hj6ge6f6atgx3QoU \"\r\n  \r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/locations?origin=6.2071641,-75.5720321&radius=10",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "6.2071641,-75.5720321"
+								},
+								{
+									"key": "radius",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve location with invalid redius",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNjY5MywiZXhwIjoxNzU2MjQyNjkzfQ.QWcDe7ijB5T-cIdp5MEmvdb1wo3hj6ge6f6atgx3QoU \"\r\n  \r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/locations?origin=6.2071641,-75.5720321&radius=-9",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "6.2071641,-75.5720321"
+								},
+								{
+									"key": "radius",
+									"value": "-9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve locations with size",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTc1NjIwNjY5MywiZXhwIjoxNzU2MjQyNjkzfQ.QWcDe7ijB5T-cIdp5MEmvdb1wo3hj6ge6f6atgx3QoU \"\r\n  \r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://api.escuelajs.co/api/v1/locations?origin=6.2071641,-75.5720321&size=5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"escuelajs",
+								"co"
+							],
+							"path": [
+								"api",
+								"v1",
+								"locations"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "6.2071641,-75.5720321"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Base_URL",
+			"value": "https://api.escuelajs.co/api/v1"
+		}
+	]
+}
